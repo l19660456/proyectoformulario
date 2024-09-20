@@ -1,0 +1,170 @@
+/* Estilos generales del body y el html */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: none; /* Oculta el cursor por defecto */
+}
+
+/* Fondo animado con un gradiente de colores */
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(270deg, #ff7e5f, #feb47b, #ffcc33, #ffc3a0);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite; /* Animación continua */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Animación del fondo para mover el gradiente */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Estilo del formulario */
+form {
+    background-color: rgba(255, 255, 255, 0.85); /* Fondo semitransparente */
+    padding: 50px 55px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Sombra alrededor del formulario */
+    border-radius: 20px; /* Bordes redondeados */
+    text-align: center;
+    width: 340px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Estilo para agrupar los campos del formulario */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+h2 {
+    color: #283629;
+    font-size: 35px;
+}
+
+/* Estilos de las etiquetas de los campos */
+label {
+    color: #283629;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Estilos para los campos de texto y textarea */
+input, textarea {
+    padding: 17px 25px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    background-color: #EDFFF0;
+    border: 2px solid #f0faf1;
+    color: #283629;
+    outline: none;
+    font-size: 14px;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease; /* Transiciones suaves */
+}
+
+/* Estilo de los placeholders */
+input::placeholder, textarea::placeholder {
+    color: #b5cab6;
+}
+
+/* Efectos cuando se pasa el mouse por encima de los campos */
+input:hover, textarea:hover {
+    border-color: #50E048; /* Cambia el color del borde al pasar el cursor */
+}
+
+/* Efectos al enfocar los campos */
+input:focus, textarea:focus {
+    border-color: #50E048; /* Cambia el color del borde */
+    box-shadow: 0 0 10px rgba(0, 255, 150, 0.5); /* Agrega una sombra luminosa */
+}
+
+/* Estilo de los enlaces de política y términos */
+.form-txt {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-txt a {
+    color: #76b28e;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Estilo del botón de enviar */
+.btn {
+    font-size: 16px;
+    color: #FFFFFF;
+    border: 0;
+    border-radius: 25px;
+    background-color: #096324;
+    box-shadow: 0 0 20px rgba(25, 254, 0, 0.4);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transición en el color y el tamaño */
+}
+
+/* Efecto hover en el botón */
+.btn:hover {
+    background-color: #50E048;
+}
+
+/* Efecto de clic en el botón */
+.btn:active {
+    transform: scale(0.9); /* Reduce el tamaño al hacer clic */
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 991px) {
+    body {
+        padding: 30px;
+    }
+    
+    form {
+        padding: 50px 30px;
+        width: 100%;
+    }
+    
+    input, textarea {
+        padding: 15px;
+    }
+}
+
+/* Estilos del cursor personalizado */
+.cursor {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border: 2px solid #50E048;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: transform 0.15s ease;
+    z-index: 1000;
+    transform: translate(-50%, -50%); /* Centra el cursor personalizado */
+}
+
+/* Efecto del cursor cuando pasa sobre el botón */
+.btn:hover ~ .cursor {
+    transform: scale(1.5) translate(-50%, -50%);
+    background-color: rgba(80, 224, 72, 0.2); /* Agrega un fondo semitransparente */
+}
+
+/* Efecto del cursor cuando pasa sobre los campos de texto */
+input:hover ~ .cursor, textarea:hover ~ .cursor {
+    background-color: rgba(80, 224, 72, 0.1); /* Agrega un color de fondo */
+    border-color: #50E048;
+}
